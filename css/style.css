@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -26,8 +27,9 @@ body {
 
 /* شريط التنقل */
 .navbar {
-    background-color: #003366;
-opacity: 0.7;
+    background-color: #184ca4;
+    color: white;
+    opacity: 0.7;
     display: flex;
     justify-content: left;
     /* توزيع العناصر في الشريط */
