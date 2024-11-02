@@ -66,38 +66,35 @@
         <h5 class="text-right">الاستعلام عن الرسوم</h5>
         
       </div>
-      <form>
+      <form id="form">
         <div class="form-group">
-          
-          <label for="civilId">الرقم المدني</label>
-          <input type="text" id="civilId" placeholder="ادخل الرقم المدني">
+            <label for="civilId">الرقم المدني</label>
+            <input type="text" id="civilId" placeholder="ادخل الرقم المدني" required>
         </div>
-        <button type="button" class="form-group-button">استعلام</button>
-      </form>
+        <button type="button" class="form-group-button" id="inquireBtn">استعلام</button>
+    </form>
       
 <!-- جدول الرسوم -->
 <div class="table-responsive">
   <table class="table mt-3">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>رسوم البطاقة</th>
-        <th>رسوم المغلفات	</th>
-        <th>المخالفات	</th>
-        <th>الإجمالي</th>
-      </tr>
-    
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-
-        <td>0 دينار كويتي</td>
-      </tr>
-    </tbody>
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>رسوم البطاقة</th>
+              <th>رسوم المغلفات</th>
+              <th>المخالفات</th>
+              <th>الإجمالي</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr id="feeRow" style="display: none;">
+              <td>1</td>
+              <td>50$</td>
+              <td>8.00</td>
+              <td>2.000</td>
+              <td>58.00</td>
+          </tr>
+      </tbody>
   </table>
 </div>
 
@@ -127,5 +124,16 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('inquireBtn').addEventListener('click', function() {
+        const civilId = document.getElementById('civilId').value;
+
+        if (civilId.length >= 10) {
+            document.getElementById('feeRow').style.display = 'table-row';
+        } else {
+            alert('يجب أن يكون الرقم المدني 10 أرقام على الأقل.');
+        }
+    });
+</script>
 </body>
 </html>
