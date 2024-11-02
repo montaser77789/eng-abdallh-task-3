@@ -83,7 +83,7 @@
     .menu-card {
         flex-direction: row;
         justify-content: space-evenly;
-        height: 150px;
+        height: 100px;
     }
     .cards{
         width: 100%;
