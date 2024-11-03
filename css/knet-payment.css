@@ -65,7 +65,17 @@
     padding: 5px 10px;
 }
 
-@media screen and (max-width: 768px) {
+
+.header-logo-knet{
+    width: 150px;
+    height: 150px;
+}
+.footer{
+    margin-top: 650px !important;
+  }
+
+
+  @media screen and (max-width: 768px) {
     .input-group{
         width: 100%;
     }
@@ -73,7 +83,7 @@
         width: 100%;
     }
     .footer{
-        margin-top: 1400px !important;
+        margin-top: 900px !important;
       }
       .header-logo-knet{
         width: 150px;
@@ -82,11 +92,3 @@
     
     
 }
-.header-logo-knet{
-    width: 150px;
-    height: 150px;
-}
-.footer{
-    margin-top: 850px !important;
-  }
-
