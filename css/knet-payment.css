@@ -2,12 +2,19 @@
     width: 80%;
 }
 .card-custom {
-    border: 1px solid #007bff;
-    box-shadow: 0 2px 8px 10px rgba(0, 0, 0, 0.3); /* زيادة العمق والانتشار */
+    border: 1px solid #000;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* زيادة العمق والانتشار */
     border-radius: 15px;
     padding: 20px;
     text-align: center;
     transition: transform 0.2s;
+}
+.line{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 10px 0;
 }
 .form-control{
     width: 70%;
@@ -21,9 +28,7 @@
 .card-container{
     width: 100%;
 }
-.card-custom:hover {
-    transform: scale(1.05);
-}
+
 .card-header-custom {
     background-color: #007bff;
     color: white;
@@ -86,7 +91,7 @@
         margin-top: 900px !important;
       }
       .header-logo-knet{
-        
+
         width: 150px;
         height: 150px;
     }
