@@ -17,9 +17,13 @@
     text-align: right;
   }
 
-  input {
+  input, select {
     padding: 8px;
     font-size: 16px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none; /* لإزالة شكل السهم الافتراضي في المتصفحات */
   }
   .card-custom {
     border: 1px solid #000;
@@ -31,9 +35,59 @@
     transition: transform 0.2s;
     margin: 10px;
 }
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd; /* حدود لتحديد الزر */
+    border-radius: 50%;
+    background-color: #ffffff; /* خلفية بيضاء للزر */
+    cursor: pointer;
+  }
+
+  /* تنسيق عند تحديد الزر */
+  input[type="radio"]:checked {
+    background-color: #007bff; /* خلفية زرقاء عند التحديد */
+    border-color: #007bff; /* تغيير لون الحدود عند التحديد */
+  }
+  /* لإضافة رمز السهم بجانب الـ select */
+  .select-wrapper {
+    position: relative;
+  }
+
+  .select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    left: 10px; /* نقل السهم إلى اليسار */
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+  }
+
+  select {
+    padding-left: 30px; /* لإفساح المجال لرؤية السهم */
+    background-color: white;
+
+  }
+  .input-container-radio {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer{
+    margin-top: 1000px !important;
+  }
 
   @media (max-width: 768px) {
     .input-container {
       flex: 1 1 100%;
     }
+    .card-body{
+        display: block;
+    }
+    .footer{
+        margin-top: 1555px  !important;
+      }
   }
