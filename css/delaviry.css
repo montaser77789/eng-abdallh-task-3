@@ -14,7 +14,7 @@
 
   label {
     margin-bottom: 8px;
-    text-align: right;
+    text-align: right !important;
   }
 
   input, select {
