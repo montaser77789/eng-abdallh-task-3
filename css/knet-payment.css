@@ -1,0 +1,77 @@
+.content-pages {
+    width: 80%;
+}
+.card-custom {
+    border: 1px solid #007bff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.form-control{
+    width: 70%;
+}
+.input-group{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 70%;
+}
+.card-container{
+    width: 100%;
+}
+.card-custom:hover {
+    transform: scale(1.05);
+}
+.card-header-custom {
+    background-color: #007bff;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+.form-group{
+    color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.form-group label{
+    color: blue;
+    text-wrap: nowrap;
+}
+.card-header h2{
+    color: blue;
+}
+.card-body h5{
+    text-align: right;
+    color: blue;
+    margin: 10px 0px;
+}
+
+.bt-payment{
+    color: black;
+    background-color: white;
+    border-color: black;
+    font-size: 20px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .input-group{
+        width: 100%;
+    }
+    .form-control{
+        width: 100%;
+    }
+    .footer{
+        margin-top: 850px !important;
+      }
+    
+    
+}
+.footer{
+    margin-top: 650px !important;
+  }
+

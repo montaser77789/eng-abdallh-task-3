@@ -114,8 +114,17 @@
           <!-- الأزرار -->
           <div class="d-flex justify-content-center mt-3 gap-3 w-100  mb-3">
             <button class="delete-form">مسح الحقول</button>
-            <button class="pay-form">دفع</button>
+            <button class="pay-form" id="payBtn">دفع</button>
+            <select style="display: none;" id="paymentOption" class="payment-select">
+              <option value="" disabled selected>-- اختر طريقة الاستلام--</option>
+              <option value="pickup">استلام في الموقع</option>
+              <option value="delivery">توصيل</option>
+            </select>
+        
           </div>
+
+
+
         </div>
       </div>
 
@@ -173,6 +182,25 @@
         renewalCheckbox.checked = false;
       }
       updateTotal();
+    });
+
+
+    const payButton = document.getElementById('payBtn');
+    const paymentOption = document.getElementById('paymentOption');
+
+    // عند الضغط على زر الدفع، يظهر القائمة المنسدلة
+    payButton.addEventListener('click', () => {
+      paymentOption.style.display = 'block'; // إظهار القائمة
+    });
+
+    // الانتقال مباشرةً عند اختيار الخيار
+    paymentOption.addEventListener('change', () => {
+      const selectedOption = paymentOption.value;
+      if (selectedOption === "pickup") {
+        window.location.href = "knet-payment.html";  // رابط صفحة الدفع
+      } else if (selectedOption === "delivery") {
+        window.location.href = "delivery-info.html"; // رابط صفحة التوصيل
+      }
     });
   </script>
 
