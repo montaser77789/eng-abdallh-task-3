@@ -33,6 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2px ;
     flex-wrap: wrap;
 }
 .form-group label{
@@ -41,6 +42,10 @@
 }
 .card-header h2{
     color: blue;
+}
+.card-body{
+    padding: 5px 0;
+
 }
 .card-body h5{
     text-align: right;
