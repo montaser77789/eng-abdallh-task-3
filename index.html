@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <!-- الهيدر مع الشعار -->
-   <div class="logo-section">
+  <div class="logo-section">
 
-     <img src="./images/pacilogo.png" alt="Logo" class="header-logo mb-3"> <!-- ضع صورة الشعار هنا -->
-   </div>
+    <img src="./images/pacilogo.png" alt="Logo" class="header-logo mb-3"> <!-- ضع صورة الشعار هنا -->
+  </div>
 
 
 
@@ -26,9 +28,10 @@
 
 
     <header class="header">
-    
+
       <nav class="navbar navbar-expand-lg navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           القائمه الرئسيه
         </button>
@@ -53,71 +56,80 @@
         </div>
       </nav>
     </header>
-  <div class="header-title">
-    <h2>
-      دفع رسوم البطاقة والمخالفات
-    </h2>
+    <div class="header-title">
+      <h2>
+        دفع رسوم البطاقة والمخالفات
+      </h2>
 
 
-  <!-- محتوى الصفحة الرئيسي -->
-  <div class="container mt-4 content-pages">
-    <div class="card ">
-      <div class="card-header">
-        <h5 class="text-right">الاستعلام عن الرسوم</h5>
-        
-      </div>
-      <form id="form">
-        <div class="form-group">
-            <label for="civilId">الرقم المدني</label>
-            <input type="text" id="civilId" placeholder="ادخل الرقم المدني" required>
+      <!-- محتوى الصفحة الرئيسي -->
+      <div class="container mt-4 content-pages">
+        <div class="card ">
+          <div class="card-header">
+            <h5 class="text-right">الاستعلام عن الرسوم</h5>
+
+          </div>
+          <form id="form">
+            <div class="form-group">
+              <label for="civilId">الرقم المدني</label>
+              <input type="text" id="civilId" placeholder="ادخل الرقم المدني" required>
+            </div>
+            <button type="button" class="form-group-button" id="inquireBtn">استعلام</button>
+          </form>
+
+          <!-- جدول الرسوم -->
+          <div class="table-responsive">
+            <table class="table mt-3">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>رسوم البطاقة</th>
+                  <th>رسوم المغلفات</th>
+                  <th>المخالفات</th>
+                  <th>الإجمالي</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="feeRow" style="display: none;">
+                  <td>1</td>
+                  <td>50$</td>
+                  <td>8.00</td>
+                  <td>2.000</td>
+                  <td id="totalAmount">58.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="checkbox-container">
+            <label class="checkbox-label">
+              <input type="checkbox" id="renewalCheckbox" checked> تجديد
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="replacementCheckbox"> بدل تالف / بدل فاقد
+            </label>
+          </div>
+
+
+          <!-- الأزرار -->
+          <div class="d-flex justify-content-center mt-3 gap-3 w-100  mb-3">
+            <button class="delete-form">مسح الحقول</button>
+            <button class="pay-form">دفع</button>
+          </div>
         </div>
-        <button type="button" class="form-group-button" id="inquireBtn">استعلام</button>
-    </form>
-      
-<!-- جدول الرسوم -->
-<div class="table-responsive">
-  <table class="table mt-3">
-      <thead>
-          <tr>
-              <th>#</th>
-              <th>رسوم البطاقة</th>
-              <th>رسوم المغلفات</th>
-              <th>المخالفات</th>
-              <th>الإجمالي</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr id="feeRow" style="display: none;">
-              <td>1</td>
-              <td>50$</td>
-              <td>8.00</td>
-              <td>2.000</td>
-              <td>58.00</td>
-          </tr>
-      </tbody>
-  </table>
-</div>
-
-
-      <!-- الأزرار -->
-      <div class="d-flex justify-content-center mt-3 gap-3 w-100  mb-3">
-        <button class="delete-form">مسح الحقول</button>
-        <button class="pay-form">دفع</button>
       </div>
+
     </div>
+
+
+    <!-- الفوتر -->
+    <footer class="footer bg-dark text-white text-center py-3 mt-4 ">
+      <p> &copy; الهيئة العامة للمعلومات المدنية 2024</p>
+
+    </footer>
+
+
   </div>
-
-</div>
-
-
-  <!-- الفوتر -->
-  <footer class="footer bg-dark text-white text-center py-3 mt-4 ">
-    <p>   &copy;   الهيئة العامة للمعلومات المدنية 2024</p>
-   
-  </footer>
-
-
-</div>
 
 
   <!-- Bootstrap JavaScript -->
@@ -125,15 +137,43 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
-    document.getElementById('inquireBtn').addEventListener('click', function() {
-        const civilId = document.getElementById('civilId').value;
+    document.getElementById('inquireBtn').addEventListener('click', function () {
+      const civilId = document.getElementById('civilId').value;
 
-        if (civilId.length >= 10) {
-            document.getElementById('feeRow').style.display = 'table-row';
-        } else {
-            alert('يجب أن يكون الرقم المدني 10 أرقام على الأقل.');
-        }
+      // التحقق من طول الرقم المدني
+      if (civilId.length >= 10) {
+        document.getElementById('feeRow').style.display = 'table-row';
+        updateTotal(); // تحديث المجموع عند عرض الصف
+      } else {
+        alert('يجب أن يكون الرقم المدني 10 أرقام على الأقل.');
+      }
     });
-</script>
-</body>
+
+    const totalAmountCell = document.getElementById("totalAmount");
+    const renewalCheckbox = document.getElementById("renewalCheckbox");
+    const replacementCheckbox = document.getElementById("replacementCheckbox");
+
+    // دالة لتحديث المجموع
+    function updateTotal() {
+      let baseAmount = 58.00;
+      let additionalFee = replacementCheckbox.checked ? 5.00 : 0.00;
+      totalAmountCell.textContent = (baseAmount + additionalFee).toFixed(2) + "$";
+    }
+
+    // منع تحديد كلا الخيارين معًا
+    renewalCheckbox.addEventListener("change", function () {
+      if (renewalCheckbox.checked) {
+        replacementCheckbox.checked = false;
+      }
+      updateTotal();
+    });
+
+    replacementCheckbox.addEventListener("change", function () {
+      if (replacementCheckbox.checked) {
+        renewalCheckbox.checked = false;
+      }
+      updateTotal();
+    });
+  </script>
+
 </html>

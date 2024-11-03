@@ -85,7 +85,34 @@ tbody > tr > td {
     border-radius: 6px;
     margin: 0 10px;
 }
+ .checkbox-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      color: #000;
+    }
 
+    /* تصميم العناصر نفسها */
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+
+    /* تصميم الصندوق ليكون ريسبونسف */
+    input[type="checkbox"] {
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-left: 8px;
+    }
+
+    /* استجابة للشاشات الأكبر */
+    @media (min-width: 768px) {
+      .checkbox-container {
+        flex-direction: row;
+      }
+    }
 .footer{
     margin-top: 500px !important;
   }
