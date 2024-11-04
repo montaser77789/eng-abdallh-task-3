@@ -1,3 +1,7 @@
+
+body{
+    font-family: "Cuprum", "droidfont", sans-serif;
+}
 .card-body {
     display: flex;
     flex-wrap: wrap;
