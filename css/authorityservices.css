@@ -79,6 +79,10 @@
 .menu-card.active{
    background-color: gray;
 }
+.text-decoration-none{
+    text-decoration: none !important;
+    color: white;
+}
   @media screen and (max-width: 768px) {
     .menu-card {
         flex-direction: row;

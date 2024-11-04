@@ -135,7 +135,7 @@ body {
 
 @media screen and (max-width: 1024px) {
     .navbar {
-        background-color: #0d47a1 ;
+        background-color: #0d47a1  !important;
         color: white;
         opacity: 0.7;
         display: flex;
