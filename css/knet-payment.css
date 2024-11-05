@@ -36,12 +36,12 @@ body{
 }
 
 .card-header-custom {
-    background-color: #1105c7;
+    background-color: #5c84a2;
     color: white;
     border-radius: 15px 15px 0 0;
 }
 .form-group{
-    color: #1105c7;
+    color: #5c84a2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,11 +50,11 @@ body{
 }
 
 .form-group label{
-    color: #1105c7;
+    color: #5c84a2;
     text-wrap: nowrap;
 }
 .card-header h2{
-    color: #1105c7;
+    color: #5c84a2;
 }
 .card-body{
     padding: 5px 0;
@@ -62,7 +62,7 @@ body{
 }
 .card-body h5{
     text-align: right;
-    color: #1105c7;
+    color: #5c84a2;
     margin: 10px 0px;
 }
 
