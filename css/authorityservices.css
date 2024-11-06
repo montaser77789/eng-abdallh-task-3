@@ -91,10 +91,14 @@ body{
     .menu-card {
         flex-direction: row;
         justify-content: space-evenly;
-        height: 100px;
+        height: 80px;
     }
     .cards{
         width: 100%;
+    }
+    .icon {
+        font-size: 30px;    
+        margin-bottom: 10px;
     }
     .content{
         min-width: 100%;
