@@ -94,7 +94,7 @@
                   <td>1</td>
                   <td>50$</td>
                   <td>8.00</td>
-                  <td>2.000</td>
+                  <td id="fineAmount">0</td>
                   <td id="totalAmount">58.00</td>
                 </tr>
               </tbody>
@@ -112,10 +112,10 @@
 
 
           <!-- الأزرار -->
-          <div class="d-flex justify-content-center mt-3 gap-3 w-100  mb-3">
-            <button class="delete-form">مسح الحقول</button>
+          <div class="d-flex justify-content-center flex-wrap mt-3 gap-3 w-100  mb-3">
+            <button id="deleteBtn" class="delete-form">مسح الحقول</button>
             <button class="pay-form" id="payBtn">دفع</button>
-            <select style="display: none;" id="paymentOption" class="payment-select">
+            <select style="display: none;" id="paymentOption" class="payment-select mt-3">
               <option value="" disabled selected>-- اختر طريقة الاستلام--</option>
               <option value="pickup">استلام في الموقع</option>
               <option value="delivery">توصيل</option>
@@ -148,33 +148,60 @@
   <script>
     document.getElementById('inquireBtn').addEventListener('click', function () {
       const civilId = document.getElementById('civilId').value;
+      const deleteBtn = document.getElementById('deleteBtn');
+      const civilIdValue = document.getElementById('civilId');
 
+
+
+deleteBtn.addEventListener('click', function () {
+  document.getElementById('feeRow').style.display = 'none';
+  civilIdValue.value = '';
+  
+  
+
+  updateTotal(); // تحديث المجموع عند عرض الصف
+  updateFineAmount();
+
+})
       // التحقق من طول الرقم المدني
       if (civilId.length >= 10) {
         document.getElementById('feeRow').style.display = 'table-row';
         updateTotal(); // تحديث المجموع عند عرض الصف
+        updateFineAmount();
       } else {
         alert('يجب أن يكون الرقم المدني 10 أرقام على الأقل.');
       }
     });
 
     const totalAmountCell = document.getElementById("totalAmount");
+    const fineAmountCell = document.getElementById("fineAmount");
     const renewalCheckbox = document.getElementById("renewalCheckbox");
     const replacementCheckbox = document.getElementById("replacementCheckbox");
+    function updateFineAmount() {
+      let baseAmount = 0;
+      let additionalFee = replacementCheckbox.checked ? 5.00 : 0.00;
+      console.log(additionalFee);
+      
+      fineAmountCell.textContent = (baseAmount + additionalFee).toFixed(2) + "$";
+    }
+
 
     // دالة لتحديث المجموع
     function updateTotal() {
       let baseAmount = 58.00;
       let additionalFee = replacementCheckbox.checked ? 5.00 : 0.00;
       totalAmountCell.textContent = (baseAmount + additionalFee).toFixed(2) + "$";
-    }
 
+
+    }
+ 
     // منع تحديد كلا الخيارين معًا
     renewalCheckbox.addEventListener("change", function () {
       if (renewalCheckbox.checked) {
         replacementCheckbox.checked = false;
       }
       updateTotal();
+      updateFineAmount();
     });
 
     replacementCheckbox.addEventListener("change", function () {
@@ -182,6 +209,7 @@
         renewalCheckbox.checked = false;
       }
       updateTotal();
+      updateFineAmount();
     });
 
 
