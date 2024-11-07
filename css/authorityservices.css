@@ -15,6 +15,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+.menu-card p {
+    flex: 1;
+}
 
 .menu-card.active {
     /* background-color: ; */
