@@ -92,7 +92,7 @@
               <tbody>
                 <tr id="feeRow" style="display: none;">
                   <td>1</td>
-                  <td>50$</td>
+                  <td>50  </td>
                   <td>8.00</td>
                   <td id="fineAmount">0</td>
                   <td id="totalAmount">58.00</td>
@@ -182,7 +182,7 @@ deleteBtn.addEventListener('click', function () {
       let additionalFee = replacementCheckbox.checked ? 5.00 : 0.00;
       console.log(additionalFee);
       
-      fineAmountCell.textContent = (baseAmount + additionalFee).toFixed(2) + "$";
+      fineAmountCell.textContent = (baseAmount + additionalFee).toFixed(2) ;
     }
 
 
@@ -190,7 +190,7 @@ deleteBtn.addEventListener('click', function () {
     function updateTotal() {
       let baseAmount = 58.00;
       let additionalFee = replacementCheckbox.checked ? 5.00 : 0.00;
-      totalAmountCell.textContent = (baseAmount + additionalFee).toFixed(2) + "$";
+      totalAmountCell.textContent = (baseAmount + additionalFee).toFixed(2) + "دينار كويتي";
 
 
     }
