@@ -106,23 +106,18 @@
                         <div class="card-custom">
                             <div class="card-body">
                                 <div class="input-container-radio">
-                                    <input type="radio" id="input1" name="address">
-                                    <label for="input1">استخدم العنوان علي البطاقه</label>
+                                    <input checked type="radio" id="useCardAddress" name="address" onclick="toggleAddressFields(true)">
+                                    <label for="useCardAddress">استخدم العنوان علي البطاقه</label>
                                 </div>
-
+            
                                 <div class="input-container-radio">
-                                    <input type="radio" id="input2" name="address">
-                                    <label for="input2">رقم الي اخر</label>
-                                </div>
-
-                                <div class="input-container-radio">
-                                    <input type="radio" id="input3" name="address">
-                                    <label for="input3">ادخال العنوان</label>
+                                    <input type="radio" id="enterAddress" name="address" onclick="toggleAddressFields(false)">
+                                    <label for="enterAddress">ادخال العنوان</label>
                                 </div>
                             </div>
 
 
-                            <div class="card-body ">
+                            <div class="card-body " id="addressFields">
 
                                 <div class="w-100 text-right">
                                     <label for="governorate">اختر المحافظة:</label>
@@ -153,9 +148,6 @@
                                     <label for="input3">الشارع</label>
                                     <input type="text" id="input3">
                                 </div>
-                            </div>
-
-                            <div class="card-body ">
                                 <div class="input-container">
                                     <label for="input1">البريد الالكتروني</label>
                                     <input type="text" id="input1">
@@ -165,12 +157,6 @@
                                     <label for="input2">اللغه المفضله للتوصل</label>
                                     <input type="text" id="input2">
                                 </div>
-
-
-                            </div>
-
-
-                            <div class="card-body ">
                                 <div class="input-container">
                                     <label for="input1">المبني</label>
                                     <input type="text" id="input1">
@@ -189,7 +175,12 @@
 
 
 
+                
+
+
+
                         </div>
+                        <button type="submit" class="btn btn-primary mt-3">ارسال</button>
 
 
 
@@ -246,6 +237,24 @@
                 });
             }
         }
+
+            // دالة لتبديل الحقول بناءً على اختيار المستخدم
+    function toggleAddressFields(isCardAddress) {
+        const addressFields = document.getElementById('addressFields');
+        if (isCardAddress) {
+            // إذا اختار "استخدام العنوان على البطاقة" أخفي الحقول الخاصة بالعنوان
+            addressFields.style.display = 'none';
+        } else {
+            // إذا اختار "إدخال العنوان" أظهر الحقول الخاصة بالعنوان
+            addressFields.style.display = 'block';
+        }
+    }
+
+    // عند تحميل الصفحة، تأكد من إخفاء أو إظهار الحقول بناءً على الخيار المبدئي
+    window.onload = function() {
+        const isCardAddressSelected = document.getElementById('useCardAddress').checked;
+        toggleAddressFields(isCardAddressSelected);
+    }
     </script>
 
 

@@ -75,6 +75,17 @@ body{
     border-radius: 6px;
     padding: 5px 10px;
 }
+.bt-payment:hover {
+    background-color: #555;
+}
+
+.confirm-btn {
+    background-color: #28a745; /* أخضر */
+}
+
+.cancel-btn {
+    background-color: #dc3545; /* أحمر */
+}
 
 
 .header-logo-knet{

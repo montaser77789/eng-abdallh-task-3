@@ -10,8 +10,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/authorityservices.css">
-    <
-</head>
+    < </head>
 
 <body>
 
@@ -144,7 +143,7 @@
                                 <p>طلبات الجهات والعناوين</p>
                             </div>
                         </div>
-                       
+
 
 
 
@@ -155,31 +154,31 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="content">
                             <div class="menu-card">
                                 <i class="fa-solid fa-calendar icon"></i>
-                                <p> <a class="text-decoration-none" href="appointment.html"> حجز  المواعيد</a>
-                                     </p>
+                                <p> <a class="text-decoration-none" href="appointment.html"> حجز المواعيد</a>
+                                </p>
                             </div>
                         </div>
-                       
-                      
-                        
-                      
+
+
+
+
                     </div>
 
                     <div class="input-group mt-4">
                         <form class="form-group">
-                        <div class="text-right">
+                            <div class="text-right">
 
 
                                 <label for="civilId " class="text-right">الرقم المدني</label>
 
                                 <input type="text" class="form-control" placeholder="الرقم المدني أو رقم الإيصال"
                                     aria-label="Civil Number or Receipt Number">
-                        </div>
-                        <button class="form-group-button">إستعلام</button>
+                            </div>
+                            <button id="inquireBtn" class="form-group-button">إستعلام</button>
                         </form>
                     </div>
                 </div>
@@ -217,18 +216,14 @@
 </script> -->
 
 <script>
-    // إضافة حدث لكل زر من الأزرار الأخرى التي يجب أن تظهر الرسالة للمستخدم.
-    document.querySelectorAll('.menu-card').forEach(card => {
-        card.addEventListener('click', function () {
-            // إذا كان المستخدم لا يختار "حجز المواعيد"
-            if (card.id !== 'appointmentCard') {
-                // إظهار رسالة تطلب تجديد الهوية المدنية
-                showRenewIdentityModal();
-            }
-        });
+    // إضافة حدث للزر "استعلام"
+    document.getElementById('inquireBtn').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        showRenewIdentityModal();
+        console.log("clicked");
     });
 
-    // دالة لإظهار الرسالة عبر Modal
     function showRenewIdentityModal() {
         // إنشاء HTML للـ modal الذي سيظهر للمستخدم
         const modalHTML = `
@@ -246,7 +241,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
-                            <a href="appointment.html" class="btn btn-primary">استمرار</a>
+                            <a href="index.html" class="btn btn-primary">استمرار</a>
                         </div>
                     </div>
                 </div>
@@ -256,10 +251,11 @@
         // إضافة modal إلى الـ body
         document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-        // عرض الـ modal
+        // عرض الـ modal باستخدام jQuery
         $('#renewIdentityModal').modal('show');
     }
 </script>
+
 </body>
 
 </html>

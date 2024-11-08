@@ -6,6 +6,7 @@ body{
     flex-wrap: wrap;
     gap: 16px;
     color: black;
+    padding: 0 10px !important;
     
   }
 

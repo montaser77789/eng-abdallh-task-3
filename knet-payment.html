@@ -77,7 +77,7 @@
 
                                 <div class="card-text">
                                     <div class="form-group">
-                                        <label for="card-number">المستفيد:</label>
+                                        <label >المستفيد:</label>
                                         <div class="input-group">
                                             <h6>Public Authority for Civil Information</h6>
 
@@ -88,7 +88,7 @@
                                    
 
                                     <div class="form-group">
-                                        <label for="card-number">المبلغ:</label>
+                                        <label >المبلغ:</label>
                                         <div class="input-group">
                                             <h6>KD 5.000</h6>
 
@@ -111,10 +111,9 @@
                                
                                     <div class="form-group">
                                         <label for="card-number">رقم بطاقه الصرف الالي</label>
-                                        <input id="card-number" maxlength="16" type="text" class="form-control" id="card-number"
-                                            placeholder="**** **** **** ****" required>
-
+                                        <input id="card-number" maxlength="19" type="text" class="form-control" placeholder="**** **** **** ****" required>
                                     </div>
+                                    
                                     <div class="line"></div>
                                     <div class="form-group">
                                         <label for="expiry-month">شهر انتهاء الصلاحية</label>
@@ -175,21 +174,22 @@
                                     <div class="line"></div>
                                  
 
+                                    <div class="card card-custom">
+                                        <div class="">
+                                            <button type="submit" class="bt-payment" id="confirmBtn">تاكيد</button>
+                                            <button type="button" class="bt-payment" id="cancelBtn" onclick="cancelAction()">الغاء</button>
+                                            
+            
+                                           
+            
+            
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
 
 
-                        <div class="card card-custom">
-                            <div class="">
-                                <button type="submit" class="bt-payment">تاكيد</button>
-                                <button type="submit" class="bt-payment">الغاء</button>
-
-                               
-
-
-                            </div>
-                        </div>
 
 
                     </div>
@@ -227,6 +227,36 @@
         }
     });
 </script> -->
+
+<script>
+document.getElementById('card-number').addEventListener('input', function (event) {
+    let input = event.target.value;
+
+    // إزالة أي مسافات أو علامات غير الأرقام
+    input = input.replace(/\D/g, '');
+
+    // إضافة الفراغات بين كل 4 أرقام
+    if (input.length > 4) {
+        input = input.replace(/(\d{4})(?=\d)/g, '$1 ');
+    }
+
+    // تعيين القيمة المعدلة في حقل الإدخال
+    event.target.value = input;
+
+    // التحقق من صحة الرقم
+    if (input.length === 19 && !/^(\d{4} \d{4} \d{4} \d{4})$/.test(input)) {
+        alert('رقم البطاقة غير صالح!');
+    }
+});
+
+function cancelAction() {
+    // إعادة تعيين النموذج أو إغلاقه أو أي إجراء آخر عند النقر على زر الإلغاء
+    alert("تم إلغاء العملية");
+    document.getElementById('payment-form').reset(); // إعادة تعيين النموذج
+}
+
+
+</script>
 
 
 </body>
